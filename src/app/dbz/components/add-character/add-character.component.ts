@@ -1,11 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { v4 as uid } from 'uuid';
+import { Character } from '../../interfaces/character.interface';
 
 @Component({
-  selector: 'app-add-character',
+  selector: 'dbz-add-character',
   standalone: false,
   templateUrl: './add-character.component.html',
   styleUrl: './add-character.component.css'
 })
 export class AddCharacterComponent {
+  @Output()
+  public onNewCharacter: EventEmitter<Character> =  new EventEmitter<Character>();
 
+  public character : Character = {
+    id: uid(),
+    name: '',
+    power: 0
+  };
+
+  emitCharacter(): void {
+    this.onNewCharacter.emit(this.character);
+    console.log(this.character);
+
+    this.character = {id: uid(), name:'' , power: 0}
+  }
 }
