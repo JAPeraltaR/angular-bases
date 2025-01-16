@@ -1,12 +1,12 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Character } from '../../interfaces/character.interface';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Character} from '../../interfaces/character.interface';
 
 @Component({
   selector: 'dbz-list',
   standalone: false,
 
   templateUrl: './list.component.html',
-  styleUrl: './list.component.css'
+  styleUrls: ['./list.component.css']
 })
 export class ListComponent {
   @Output()
@@ -18,8 +18,8 @@ export class ListComponent {
     power: 100
   }];
 
-  onDeleteCharacter(id?: string): void{
-    if(!id) return;
+  onDeleteCharacter(id?: string): void {
+    if (!id) return;
     console.log(id);
     this.onDelete.emit(id);
   }
