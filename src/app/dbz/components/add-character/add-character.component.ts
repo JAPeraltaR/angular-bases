@@ -5,12 +5,11 @@ import { Character } from '../../interfaces/character.interface';
 @Component({
   selector: 'dbz-add-character',
   standalone: false,
-  templateUrl: './add-character.component.html',
-  styleUrl: './add-character.component.css'
+  templateUrl: './add-character.component.html'
 })
 export class AddCharacterComponent {
   @Output()
-  public onNewCharacter: EventEmitter<Character> =  new EventEmitter<Character>();
+  public onNewCharacter: EventEmitter<Character> =  new EventEmitter();
 
   public character : Character = {
     id: uid(),

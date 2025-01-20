@@ -5,8 +5,7 @@ import {Character} from '../../interfaces/character.interface';
   selector: 'dbz-list',
   standalone: false,
 
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  templateUrl: './list.component.html'
 })
 export class ListComponent {
   @Output()
